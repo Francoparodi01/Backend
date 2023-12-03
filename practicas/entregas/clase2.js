@@ -2,6 +2,9 @@ class ProductManager {
     constructor(){
         this.products = []
     }
+
+ 
+    
     addProduct(title, description, price, thumbnail, code, stock) {
         !([title, description, price, thumbnail, code, stock].every(Boolean))
             ? console.log("Todos los campos son obligatorios")
@@ -43,7 +46,7 @@ class ProductManager {
 
 const productManager = new ProductManager();
 
-productManager.addProduct("Televisor HD", "Televisor samsung 60 pulgadas","$50.000", "imagen.jpg", "001", 600)
+productManager.addProduct("Televisor HD","$50.000", "imagen.jpg", "001", 600)
 productManager.addProduct("iphone 13", "El peor celular del mercado","$1.000.000", "imagen.jpg", "002", 0)
 productManager.addProduct("Teclado razer blackwidow v2", "Teclado mecanico con switches blue","$90.000", "imagen.jpg", "003", 25)
 
