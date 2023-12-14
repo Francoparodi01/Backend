@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Televisor HD",
+    "description": "Nuevo televisor 4K",
+    "price": "$60.000",
+    "thumbnail": "imagen.jpg",
+    "code": "001",
+    "stock": 700
+  },
+  {
+    "id": 3,
+    "title": "Teclado razer blackwidow v2",
+    "description": "Teclado mecánico con switches blue",
+    "price": "$90.000",
+    "thumbnail": "imagen.jpg",
+    "code": "003",
+    "stock": 25
+  }
+]
