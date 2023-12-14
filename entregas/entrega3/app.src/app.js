@@ -16,7 +16,7 @@ app.listen(port, () => {
 });
 
 //Configuración de la instancia de ProductManager con el archivo de productos
-const productManager = new ProductManager('productos.json');
+const productManager = new ProductManager('../productos.json');
 
 //Ruta inicial, home
 app.get('/', (req,res) =>{
