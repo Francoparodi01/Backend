@@ -1,13 +1,7 @@
-//Si bien el trabajo completo está en este archivo, se hicieron algunas modificaciones en el archivo ProductManager. 
-//dichos cambios están comentados! 
-
-
-//Traigo express y mi archivo productManage
 const express = require('express');
-const ProductManager = require('./ProductManager');
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 //Iniciar el servidor
 
@@ -51,7 +45,7 @@ app.get('/products', async (req, res) => {
 //Recibimos la ruta /products/productId 
 app.get('/products/:pid', async (req, res) => {
     try {
-        //Esta funcion se ejecuta igual que la del código anterior. Es necesario acalarar que luego del .params (es decir .pid), la siguiente propiedad debe 
+        //Esta funcion se ejecuta igual que la del código anterior. Es necesario acalarar que luego del .params (es decir .pid), la propiedad debe 
         //coincidir con /:pid de la ruta. Sino, devuelve error  
         const productId = parseInt(req.params.pid);
         //Traemos de manera asincrónica el ID requerido  
