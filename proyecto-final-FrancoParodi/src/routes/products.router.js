@@ -4,6 +4,9 @@ const router = express.Router()
 const ProductManager = require("../controllers/productManager")
 const productManager = new ProductManager("./src/models/productos.json")
 
+const CartManager = require("../controllers/cartManager")
+const cartManager = new CartManager("./src/models/carrito.json")
+
 router.get('/products', async (req, res) => {
     try {
         //Obtenemos la lista completa de productos con el método getProducts()
@@ -47,25 +50,34 @@ router.get('/:pid', async (req, res) => {
         res.status(500).json({ error: 'Error al obtener el producto' });
     }
 });
-router.post('/agregarProducto', async (req, res) => {
+
+router.post('/', async (req, res) => {
     try {
-        // Desestructura el objeto del cuerpo de la solicitud
-        const { id, title, description, price, thumbnail, code, stock } = req.body;
+        const { productId, quantity, cartId } = req.body;
 
-        // Crea un objeto con los datos desestructurados
-        const newProductData = { id, title, description, price, thumbnail, code, stock };
+        // Utiliza las instancias existentes de ProductManager y CartManager
+        const product = productManager.getProductById(productId);
 
-        // Agrega el producto utilizando el objeto creado
-        const response = await productManager.addProduct(newProductData);
+        const cart = cartManager.getCartById(cartId)
 
-        // Envía la respuesta JSON al cliente
-        res.json(response);
+        if (!product) {
+            return res.status(404).json({ error: 'Producto no encontrado' });
+        }
+
+        console.log('cartId:', cartId);
+
+        // Añade el producto al carrito utilizando las instancias existentes
+        await cartManager.addProductToCart(cartId, productId, quantity);
+
+        res.json({ message: 'Producto agregado al carrito con éxito' });
     } catch (error) {
-        // En caso de error, loguea el mensaje de error y envía una respuesta de error al cliente
-        console.log('Error al agregar producto', error.message);
-        res.status(500).json({ error: 'Error al agregar producto' });
+        console.error('Error al agregar producto al carrito', error.message);
+        res.status(500).json({ error: 'Error al agregar producto al carrito' });
     }
 });
+
+
+
 
 
 router.put('/editarProducto', async (req, res) => {

@@ -6,34 +6,33 @@ class ProductManager {
         this.path = filePath;
         this.products = this.loadProducts();
     }
-
-    addProduct(productData) {
-        // Validar campos obligatorios
-        if (!productData.title || !productData.price || !productData.code) {
-            throw new Error('Campos obligatorios (title, price, code) no proporcionados');
+    
+        addProduct(productData) {
+            // Validar campos obligatorios
+            if (!productData.title || !productData.price || !productData.code) {
+                throw new Error('Campos obligatorios (title, price, code) no proporcionados');
+            }
+    
+            // Genera un nuevo ID único
+            const newId = uuidv4();
+    
+            // Crea un nuevo producto con los datos proporcionados y valores predeterminados
+            const newProduct = {
+                id: newId,
+                title: productData.title,
+                description: productData.description || '',
+                price: productData.price,
+                code: productData.code,
+                stock: productData.stock || 0,
+                status: true, // Valor predeterminado
+                category: productData.category || '',
+                thumbnails: productData.thumbnails || []
+            };
+             
+            // Agrega el nuevo producto al array de productos
+            this.products.push(newProduct);
+            return newProduct;
         }
-
-        const newId = uuidv4();
-
-        const newProduct = {
-            id: newId,
-            title: productData.title,
-            description: productData.description || '',
-            price: productData.price,
-            thumbnail: productData.thumbnail || '',
-            code: productData.code,
-            stock: productData.stock || 0
-        };
-         
-        // Agrega el nuevo producto al array de productos
-        this.products.push(newProduct);
-        // Guarda los productos actualizados en el archivo
-        this.saveProducts();
-        // Muestra los productos por consola
-        console.log(`Producto '${productData.title}' agregado con el nuevo ID ${newId}.`);
-        
-        return newProduct;
-    }
     loadProducts() {
         try {
             const data = fs.readFileSync(this.path, 'utf8');

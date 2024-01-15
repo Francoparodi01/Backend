@@ -20,6 +20,16 @@ class CartManager{
         }
     }
 
+    getCartById(id) {
+        const cart = this.carts.find(cart => cart.id == id);
+        if (cart) {
+            return cart;
+        } else {
+            console.log(`El carrito con el ID número ${id}. No fue encontrado.`);
+        }
+    }
+
+    
     //Función que trae los productos por id del carrito
     getCartProducts = async (id) => {
         //asincrónicamente llamamos la funcion getcarts utilizando la prop. this para entrar en la clase CartManager
@@ -30,10 +40,11 @@ class CartManager{
 
         //Donde si cart existe, retornamos productos, y sino clg
         if (cart) {
-            return cart.products
-        }else{
-            console.log("carrito no encontrado")
+            return cart.products;
+        } else {
+            throw new Error("Carrito no encontrado");
         }
+        
     }
 
     //Función que crea un nuevo carrito 
