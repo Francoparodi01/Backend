@@ -76,15 +76,18 @@ router.post('/', async (req, res) => {
     }
 });
 
-
-
-
-
 router.put('/editarProducto', async (req, res) => {
     try {
         const { id, title, description, price, thumbnail, code, stock } = req.body;
+
+        
         const response = await productManager.updateProduct(id, { title, description, price, thumbnail, code, stock });
+        
         res.send(response);
+
+        //lo llamo despues de recibir la respuesta para que me traiga el producto actualizado
+        const productoActualizado = await productManager.getProductById(id);   
+        console.log(productoActualizado)
     } catch (error) {
         console.log('Error al editar producto:', error.message); // Imprime el error en la consola
         res.status(500).send({ error: 'Error al editar producto' }); // Envía una respuesta de error al cliente

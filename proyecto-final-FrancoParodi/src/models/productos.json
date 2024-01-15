@@ -9,93 +9,129 @@
     "stock": 50
   },
   {
-    "id": 4,
-    "titulo": "Procesador AMD Ryzen 9 5900X",
-    "descripcion": "Potente procesador de la serie Ryzen para rendimiento extremo",
-    "precio": 449.99,
+    "id": 2,
+    "titulo": "Tarjeta Gráfica NVIDIA GeForce GTX 1660",
+    "descripcion": "Tarjeta gráfica de gama media para juegos de alta calidad",
+    "precio": 249.99,
     "thumbnail": "#imagen",
-    "code": "CPU004",
-    "stock": 15
-  },
-  {
-    "id": 5,
-    "titulo": "GPU AMD Radeon RX 6800 XT",
-    "descripcion": "Tarjeta gráfica AMD para juegos de alta calidad",
-    "precio": 549.99,
-    "thumbnail": "#imagen",
-    "code": "GPU005",
+    "code": "GPU020",
     "stock": 25
   },
   {
-    "id": 6,
-    "titulo": "Placa Madre MSI MPG B550 Gaming Edge WiFi",
-    "descripcion": "Motherboard con características gaming y conectividad WiFi",
-    "precio": 179.99,
-    "thumbnail": "nueva_imagen.jpg",
-    "code": "NUEVO_CODE",
-    "stock": 50,
-    "title": "Nuevo título",
-    "description": "Nueva descripción",
-    "price": 19.99
+    "id": 3,
+    "titulo": "Placa Madre ASUS Prime B450M-A/CSM",
+    "descripcion": "Placa madre para procesadores AMD Ryzen",
+    "precio": 89.99,
+    "thumbnail": "#imagen",
+    "code": "MB030",
+    "stock": 20
   },
   {
-    "id": 7,
-    "titulo": "Procesador Intel Core i5",
-    "descripcion": "Procesador de gama media para rendimiento equilibrado",
-    "precio": 199.99,
+    "id": 4,
+    "titulo": "Memoria RAM Corsair Vengeance LPX 16GB",
+    "descripcion": "Memoria RAM DDR4 para un rendimiento eficiente",
+    "precio": 79.99,
     "thumbnail": "#imagen",
-    "code": "CPU007",
+    "code": "RAM040",
     "stock": 40
   },
   {
-    "id": 8,
-    "title": "Nuevo título",
-    "description": "Nueva descripción",
-    "price": 19.99,
-    "thumbnail": "nueva_imagen.jpg",
-    "code": "NUEVO_CODE",
-    "stock": 50
+    "id": 5,
+    "titulo": "SSD Kingston A2000 500GB",
+    "descripcion": "Unidad de estado sólido para almacenamiento rápido",
+    "precio": 69.99,
+    "thumbnail": "#imagen",
+    "code": "SSD050",
+    "stock": 15
   },
   {
-    "id": 9,
-    "titulo": "Placa Madre ASRock B450M Pro4",
-    "descripcion": "Motherboard económica para procesadores AMD",
-    "precio": 89.99,
+    "id": 6,
+    "titulo": "Teclado Mecánico Logitech G Pro X",
+    "descripcion": "Teclado mecánico para juegos personalizable",
+    "precio": 129.99,
     "thumbnail": "#imagen",
-    "code": "MTH009",
+    "code": "KB060",
+    "stock": 30
+  },
+  {
+    "id": 7,
+    "titulo": "Mouse Inalámbrico Logitech MX Master 3",
+    "descripcion": "Mouse inalámbrico para productividad",
+    "precio": 99.99,
+    "thumbnail": "#imagen",
+    "code": "MO070",
+    "stock": 18
+  },
+  {
+    "id": 8,
+    "titulo": "Monitor Dell S2419HGF 24\"",
+    "descripcion": "Monitor de juegos con frecuencia de actualización rápida",
+    "precio": 199.99,
+    "thumbnail": "#imagen",
+    "code": "MON080",
     "stock": 22
   },
   {
-    "id": 10,
-    "titulo": "Procesador AMD Ryzen 5 3600",
-    "descripcion": "Procesador de gama media para tareas cotidianas y gaming",
-    "precio": 179.99,
+    "id": 9,
+    "titulo": "Fuente de Poder EVGA 600 W1",
+    "descripcion": "Fuente de alimentación de 600W para PC",
+    "precio": 49.99,
     "thumbnail": "#imagen",
-    "code": "CPU010",
-    "stock": 33
+    "code": "PSU090",
+    "stock": 28
   },
   {
-    "id": 11
+    "id": 10,
+    "titulo": "Tarjeta de Sonido Creative Sound Blaster Z",
+    "descripcion": "Tarjeta de sonido para una experiencia de audio inmersiva",
+    "precio": 89.99,
+    "thumbnail": "#imagen",
+    "code": "SND100",
+    "stock": 12
+  },
+  {
+    "id": 11,
+    "titulo": "Caja de PC NZXT H510i",
+    "descripcion": "Caja compacta para construcciones elegantes",
+    "precio": 99.99,
+    "thumbnail": "#imagen",
+    "code": "CASE110",
+    "stock": 16
   },
   {
     "id": 12,
+    "titulo": "Ventilador Cooler Master Hyper 212 RGB",
+    "descripcion": "Ventilador de CPU con iluminación RGB",
+    "precio": 44.99,
     "thumbnail": "#imagen",
-    "code": "CPU010",
-    "stock": 33
+    "code": "FAN120",
+    "stock": 35
   },
   {
     "id": 13,
+    "titulo": "Webcam Logitech C920 HD Pro",
+    "descripcion": "Cámara web HD para videollamadas y streaming",
+    "precio": 69.99,
     "thumbnail": "#imagen",
-    "code": "CPU010",
-    "stock": 33
+    "code": "CAM130",
+    "stock": 20
   },
   {
     "id": 14,
+    "titulo": "Auriculares HyperX Cloud II",
+    "descripcion": "Auriculares con sonido envolvente para juegos",
+    "precio": 99.99,
     "thumbnail": "#imagen",
-    "code": "CPU010",
-    "stock": 33
+    "code": "HEADSET140",
+    "stock": 25
   },
   {
-    "id": "3ef2c982-e4df-48d4-b2da-39f34657351c"
+    "id": 15,
+    "titulo": "Impresora Multifunción HP OfficeJet Pro 9015",
+    "descripcion": "Impresora todo en uno para oficinas domésticas",
+    "precio": 229.99,
+    "thumbnail": "#imagen",
+    "code": "PRINTER150",
+    "stock": 18
   }
 ]
