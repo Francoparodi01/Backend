@@ -47,7 +47,7 @@ class CartManager{
         this.carts = await this.getCarts();
         this.carts.push(newCart);
 
-        await fs.promises.writeFile(this.path, JSON.stringify(this.carts));
+        await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2));
         return newCart;
     }
 

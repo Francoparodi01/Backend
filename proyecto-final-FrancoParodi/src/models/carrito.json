@@ -1,1 +1,35 @@
-[{"id":"0ba8eca9-9d6c-4c60-a600-1378d3bc0d85","products":[{"title":"hola"}]},{"id":"865d8ce5-8ebe-45b5-a2f2-2c8ac704b240","products":[{"title":"2","quantity":1}]},{"id":"2271a6b3-1fb8-471a-93bd-ffa746deed4c","products":[]}]
+[
+  {
+    "id": "0ba8eca9-9d6c-4c60-a600-1378d3bc0d85",
+    "products": [
+      {
+        "title": "hola"
+      }
+    ]
+  },
+  {
+    "id": "865d8ce5-8ebe-45b5-a2f2-2c8ac704b240",
+    "products": [
+      {
+        "title": "2",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": "2271a6b3-1fb8-471a-93bd-ffa746deed4c",
+    "products": []
+  },
+  {
+    "id": "d613c514-d444-4b3c-89be-8e73ca8542ff",
+    "products": []
+  },
+  {
+    "id": "8ea59842-0e90-43f1-8293-dd74200afabc",
+    "products": []
+  },
+  {
+    "id": "6b58b015-9705-46a0-90ce-1dfa09b5c8b8",
+    "products": []
+  }
+]

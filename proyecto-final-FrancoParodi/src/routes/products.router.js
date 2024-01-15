@@ -29,7 +29,7 @@ router.get('/products', async (req, res) => {
 });
 
 //Recibimos la ruta /products/productId 
-router.get('/products/:pid', async (req, res) => {
+router.get('/:pid', async (req, res) => {
     try {
         //Esta funcion se ejecuta igual que la del código anterior. Es necesario acalarar que luego del .params (es decir .pid), la propiedad debe 
         //coincidir con /:pid de la ruta. Sino, devuelve error  
@@ -47,16 +47,27 @@ router.get('/products/:pid', async (req, res) => {
         res.status(500).json({ error: 'Error al obtener el producto' });
     }
 });
-
-router.post('/agregarProducto', async(req, res) =>{
+router.post('/agregarProducto', async (req, res) => {
     try {
-        const {id, title, description, price, thumbnail, code, stock} = req.body;
-        const response = await productManager.addProduct({id, title, description, price, thumbnail, code, stock})
-        res.json(response)
+        // Desestructura el objeto del cuerpo de la solicitud
+        const { id, title, description, price, thumbnail, code, stock } = req.body;
+
+        // Crea un objeto con los datos desestructurados
+        const newProductData = { id, title, description, price, thumbnail, code, stock };
+
+        // Agrega el producto utilizando el objeto creado
+        const response = await productManager.addProduct(newProductData);
+
+        // Envía la respuesta JSON al cliente
+        res.json(response);
     } catch (error) {
-        console.log('Error al agregar producto')       
+        // En caso de error, loguea el mensaje de error y envía una respuesta de error al cliente
+        console.log('Error al agregar producto', error.message);
+        res.status(500).json({ error: 'Error al agregar producto' });
     }
-})
+});
+
+
 router.put('/editarProducto', async (req, res) => {
     try {
         const { id, title, description, price, thumbnail, code, stock } = req.body;
@@ -67,13 +78,17 @@ router.put('/editarProducto', async (req, res) => {
         res.status(500).send({ error: 'Error al editar producto' }); // Envía una respuesta de error al cliente
     }
 });
-router.delete('/:pid/delete', async(req, res) => {
+
+router.delete('/:pid', async (req, res) => {
+    const { pid } = req.params;
     try {
-        await productManager.deleteProduct(id)
-        res.send('Producto eliminado correctamente')
+        await productManager.deleteProduct(pid);
+        res.send('Producto eliminado correctamente');
     } catch (error) {
-        console.log('Error al intentar eliminar')        
+        console.log('Error al intentar eliminar', error);
+        res.status(500).send('Error al intentar eliminar el producto');
     }
-})
+});
+
 
 module.exports = router
