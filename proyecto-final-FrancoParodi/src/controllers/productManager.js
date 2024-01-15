@@ -67,35 +67,25 @@ class ProductManager {
     }
 
     updateProduct(id, updatedFields) {
-        try {
-            const productIndex = this.products.findIndex(product => product.id == id);
-            if (productIndex !== -1) {
-                // Validar campos permitidos y necesarios antes de la actualización
-                const allowedFields = ['title', 'description', 'price', 'thumbnail', 'code', 'stock'];
-                Object.keys(updatedFields).forEach(field => {
-                    if (!allowedFields.includes(field)) {
-                        throw new Error(`Campo no permitido: ${field}`);
-                    }
-                });
-
-                this.products[productIndex] = {
-                    ...this.products[productIndex], 
-                    ...updatedFields, 
-                    id: this.products[productIndex].id 
-                };
-                this.saveProducts();
-                console.log(`El producto con el número de ID ${id} se actualizó`);
-                return this.products[productIndex];
-            } else {
-                console.log(`El producto con el número de ID ${id} no fue encontrado`);
-                return null;
-            }
-        } catch (error) {
-            console.error(`Error al actualizar producto: ${error.message}`);
-            throw error; // Re-lanza la excepción para que pueda manejarse adecuadamente fuera de la clase
+        const productId = parseInt(id, 10); // Convertir ID a número
+    
+        const productIndex = this.products.findIndex(product => product.id === productId);
+    
+        if (productIndex !== -1) {
+            // Sobrescribe todos los campos con los proporcionados en updatedFields
+            this.products[productIndex] = {
+                id: this.products[productIndex].id,
+                ...updatedFields,
+            };
+    
+            this.saveProducts();
+            console.log(`El producto con el número de ID ${id} se actualizó`);
+        } else {
+            console.log(`El producto con el número de ID ${id} no fue encontrado`);
         }
     }
-
+    
+    
     deleteProduct(id) {
         try {
             const productIndex = this.products.findIndex(product => product.id == id);

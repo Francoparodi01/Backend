@@ -1,21 +1,12 @@
 [
   {
     "id": 1,
-    "titulo": "Procesador Intel Core i7",
-    "descripcion": "Potente procesador para rendimiento de alta gama",
-    "precio": 299.99,
-    "thumbnail": "#imagen",
-    "code": "CPU001",
+    "title": "Nuevo título",
+    "description": "Nueva descripción",
+    "price": 19.99,
+    "thumbnail": "nueva_imagen.jpg",
+    "code": "NUEVO_CODE",
     "stock": 50
-  },
-  {
-    "id": 2,
-    "titulo": "GPU NVIDIA GeForce RTX 3080",
-    "descripcion": "Tarjeta gráfica para juegos y renderizado de última generación",
-    "precio": 699.99,
-    "thumbnail": "#imagen",
-    "code": "GPU002",
-    "stock": 30
   },
   {
     "id": 4,
@@ -40,9 +31,12 @@
     "titulo": "Placa Madre MSI MPG B550 Gaming Edge WiFi",
     "descripcion": "Motherboard con características gaming y conectividad WiFi",
     "precio": 179.99,
-    "thumbnail": "#imagen",
-    "code": "MTH006",
-    "stock": 10
+    "thumbnail": "nueva_imagen.jpg",
+    "code": "NUEVO_CODE",
+    "stock": 50,
+    "title": "Nuevo título",
+    "description": "Nueva descripción",
+    "price": 19.99
   },
   {
     "id": 7,
@@ -55,12 +49,12 @@
   },
   {
     "id": 8,
-    "titulo": "GPU NVIDIA GeForce GTX 1660 Super",
-    "descripcion": "Tarjeta gráfica para juegos de gama media",
-    "precio": 249.99,
-    "thumbnail": "#imagen",
-    "code": "GPU008",
-    "stock": 18
+    "title": "Nuevo título",
+    "description": "Nueva descripción",
+    "price": 19.99,
+    "thumbnail": "nueva_imagen.jpg",
+    "code": "NUEVO_CODE",
+    "stock": 50
   },
   {
     "id": 9,
