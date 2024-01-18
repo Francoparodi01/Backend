@@ -1,5 +1,7 @@
-const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
+const fs = require("fs")
+const { v4 : uuidv4 } = require("uuid");
+const { route } = require("../routes/views.router");
+
 
 class ProductManager {
     constructor(filePath) {

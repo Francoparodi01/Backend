@@ -1,5 +1,5 @@
-const fs = require("fs")
-const { v4: uuidv4 } = require('uuid');
+const fs = require("fs") 
+const {v4 : uuidv4} = require ("uuid")
 //se usa uuidv4 para generar ids automáticos! 
 
 class CartManager{
@@ -99,4 +99,4 @@ class CartManager{
     }
 }
 
-module.exports = CartManager;
+module.exports = CartManager
