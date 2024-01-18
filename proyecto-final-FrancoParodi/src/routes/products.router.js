@@ -9,17 +9,17 @@ const cartManager = new CartManager("./src/models/carrito.json");
 
 router.get('/products', async (req, res) => {
     try {
-        const productos = await productManager.getProducts();
+        const products = await productManager.getProducts();
         let limit = parseInt(req.query.limit);
-        let productosListados;
+        let listedProducts;
 
         if (!isNaN(limit)) {
-            productosListados = productos.slice(0, limit);
+            listedProducts = products.slice(0, limit);
         } else {
-            productosListados = productos;
+            listedProducts = products;
         }
 
-        res.send({ productosListados });
+        res.send({ listedProducts });
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener los productos' });
     }
@@ -66,8 +66,8 @@ router.put('/editarProducto', async (req, res) => {
         const response = await productManager.updateProduct(id, { title, description, price, thumbnail, code, stock });
         res.send(response);
 
-        const productoActualizado = await productManager.getProductById(id);   
-        console.log(productoActualizado);
+        const updatedProducts = await productManager.getProductById(id);   
+        console.log(updatedProducts);
     } catch (error) {
         console.log('Error al editar producto:', error.message);
         res.status(500).send({ error: 'Error al editar producto' });

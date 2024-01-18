@@ -1,6 +1,5 @@
 const fs = require("fs")
 const { v4 : uuidv4 } = require("uuid");
-const { route } = require("../routes/views.router");
 
 
 class ProductManager {
@@ -11,7 +10,7 @@ class ProductManager {
     
         addProduct(productData) {
             // Validar campos obligatorios
-            if (!productData.title || !productData.price || !productData.code) {
+            if (!title || !description || !price || !code || !stock || !category) {
                 throw new Error('Campos obligatorios (title, price, code) no proporcionados');
             }
     

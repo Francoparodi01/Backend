@@ -14,13 +14,13 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/realTimeProducts', async (req,res) => {
-    try{
-        res.render("realTimeProducts")
-    }catch(error){
+    try {
+        res.render("realTimeProducts");
+    } catch(error) {
         res.status(500).send({
             error: "Error interno del servidor"
-        })
+        });
     }
-})
+});
 
 module.exports = router;

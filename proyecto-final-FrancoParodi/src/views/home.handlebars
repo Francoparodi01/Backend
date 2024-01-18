@@ -8,50 +8,18 @@
 </head>
 <body>
     <h1>Lista de Productos</h1>
-    <ul>
-        {{#each products}}
-            <li>
-                {{title}} - {{price}} 
-                <!-- Agrega el tag <img> y utiliza la propiedad 'thumbnail' como 'src' -->
-                <img src={{thumbnail}} alt={{title}}>
-            </li>
-        {{/each}}
-    </ul>
-
-    <!-- Configuración del cliente Socket.IO -->
+        <div class="contenedorCards">
+            <ul>
+                {{#each products}}
+                    <div class="card">
+                        <p> {{this.title}} </p>
+                        <p>  {{this.price}} </p>
+                        <img src={{this.thumbnail}} alt={{this.title}}>
+                    </div>
+                {{/each}}
+            </ul>
+        </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-        const socket = io();
-
-        socket.on('connect', () => {
-            console.log('Conectado al servidor de WebSocket');
-            socket.emit('solicitarProductos');
-        });
-
-        socket.on('disconnect', () => {
-            console.log('Desconectado del servidor de WebSocket');
-        });
-
-        
-socket.on('productos', (productos) => {
-    const productosLista = document.querySelector('ul');
-    productosLista.innerHTML = '';
-
-    productos.forEach((producto) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${producto.title} - ${producto.price}`;
-
-        // Agrega un log para verificar la ruta de la imagen
-        console.log(producto.thumbnail);
-
-        const img = document.createElement('img');
-        img.src = producto.thumbnail;
-        img.alt = producto.title;
-
-        listItem.appendChild(img);
-        productosLista.appendChild(listItem);
-    });
-});
-     </script>
+    <script src="../public/js/index.js"></script>
 </body>
 </html>

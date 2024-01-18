@@ -9,15 +9,6 @@
     "stock": 8
   },
   {
-    "id": 4,
-    "title": "AMD Radeon RX 6800 XT",
-    "description": "Tarjeta gráfica AMD Radeon RX 6800 XT, 16 GB GDDR6",
-    "price": 649.99,
-    "thumbnail": "https://example.com/images/rx-6800xt.jpg",
-    "code": "GPU002",
-    "stock": 12
-  },
-  {
     "id": 5,
     "title": "ASUS ROG Strix Z590-E Gaming",
     "description": "Placa base ASUS ROG Strix Z590-E Gaming, chipset Z590",
@@ -34,15 +25,6 @@
     "thumbnail": "https://example.com/images/b550-aorus-elite.jpg",
     "code": "MOTHERBOARD002",
     "stock": 18
-  },
-  {
-    "id": 7,
-    "title": "Intel Core i7-11700K",
-    "description": "Procesador Intel Core i7 de 11ª generación, 8 núcleos, 16 hilos",
-    "price": 399.99,
-    "thumbnail": "https://example.com/images/i7-11700k.jpg",
-    "code": "CPU003",
-    "stock": 14
   },
   {
     "id": 8,

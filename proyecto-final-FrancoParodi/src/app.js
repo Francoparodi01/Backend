@@ -1,8 +1,7 @@
 const express = require('express');
 const exphbs = require("express-handlebars");
-const http = require('http');
 
-const socketIO = require("socket.io")
+const socket = require("socket.io")
 
 const viewsRouter = require("./routes/views.router.js");
 const productsRouter = require("./routes/products.router.js");
@@ -13,13 +12,11 @@ const productManager = new ProductManager("./src/models/productos.json");
 
 const app = express();
 const port = 8080;
-const httpServer = http.createServer(app); 
-
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static("./src/public"));
 
 // express-handlebars structure
 app.engine('handlebars', exphbs.engine());
@@ -31,20 +28,30 @@ app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/", viewsRouter);
 
-// Connection with socket.io
 
-const io = socketIO(httpServer);
+
+const server = app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+});
+
+// Coneccion con socket.io
+
+const io = socket(server);
 
 io.on('connection', async (socket) => {
     console.log('Un cliente se conectó');
-    try {
-        const products = await productManager.getProducts();
-        socket.emit('productos', products);
-    } catch (error) {
-        console.error('Error al leer los productos:', error.message);
-    }
-});
 
-httpServer.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+    socket.emit("productos", await productManager.getProducts());    
+
+    socket.on("eliminarProducto", async (id) => {
+        await productManager.deleteProduct(id);
+        //Enviamos el array de productos actualizado a todos los productos:
+        io.sockets.emit("productos", await productManager.getProducts());
+    });
+
+    socket.on("agregarProducto", async (producto) => {
+        await productManager.addProduct(producto);
+        //Enviamos el array de productos actualizado a todos los productos:
+        io.sockets.emit("productos", await productManager.getProducts());
+    });
 });
