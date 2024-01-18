@@ -5,3 +5,11 @@
     padding: 10px;
     min-width: 200px;
 }
+.product-img{
+    width: 250px;
+    height: 250px;
+}
+.contenedorCards{
+    display: flex;
+    flex-direction: row;
+}

@@ -9,15 +9,13 @@
 <body>
     <h1>Lista de Productos</h1>
         <div class="contenedorCards">
-            <ul>
                 {{#each products}}
                     <div class="card">
                         <p> {{this.title}} </p>
                         <p>  {{this.price}} </p>
-                        <img src={{this.thumbnail}} alt={{this.title}}>
+                        <img src={{this.thumbnail}} alt={{this.title}} class="product-img">
                     </div>
                 {{/each}}
-            </ul>
         </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="../public/js/index.js"></script>
