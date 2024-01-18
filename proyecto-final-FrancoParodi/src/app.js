@@ -43,15 +43,19 @@ io.on('connection', async (socket) => {
 
     socket.emit("productos", await productManager.getProducts());    
 
-    socket.on("eliminarProducto", async (id) => {
+    socket.on("deleteProduct", async (id) => {
         await productManager.deleteProduct(id);
         //Enviamos el array de productos actualizado a todos los productos:
         io.sockets.emit("productos", await productManager.getProducts());
     });
 
-    socket.on("agregarProducto", async (producto) => {
-        await productManager.addProduct(producto);
-        //Enviamos el array de productos actualizado a todos los productos:
-        io.sockets.emit("productos", await productManager.getProducts());
+    socket.on("addProduct", async (producto) => {
+        try {
+            await productManager.addProduct(producto);
+            //Enviamos el array de productos actualizado a todos los productos:
+            io.sockets.emit("productos", await productManager.getProducts());
+        } catch (error) {
+            console.error('Error agregando producto:', error);
+        }
     });
 });

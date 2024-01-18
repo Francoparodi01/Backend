@@ -10,8 +10,8 @@ class ProductManager {
     
         addProduct(productData) {
             // Validar campos obligatorios
-            if (!title || !description || !price || !code || !stock || !category) {
-                throw new Error('Campos obligatorios (title, price, code) no proporcionados');
+            if (!productData.title || !productData.description || !productData.price || !productData.code || !productData.stock || !productData.category) {
+                return ;
             }
     
             // Genera un nuevo ID único

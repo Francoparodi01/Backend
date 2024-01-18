@@ -22,7 +22,7 @@ const renderProducts = (products) => {
 
         //Agregamos el evento eliminar producto:
         card.querySelector("button").addEventListener("click", () => {
-            deleteProducts(product.id);
+            deleteProduct(product.id);
         });
     });
 }
@@ -33,7 +33,7 @@ const deleteProduct = (id) => {
 
 //Agregar producto:
 
-document.getElementById("btnEnviar").addEventListener("click", () => {
+document.getElementById("send-button").addEventListener("click", () => {
     addProduct();
 });
 
@@ -42,11 +42,11 @@ const addProduct = () => {
         title: document.getElementById("title").value,
         description: document.getElementById("description").value,
         price: document.getElementById("price").value,
-        img: document.getElementById("img").value, // Fix: Use correct ID "img"
+        img: document.getElementById("thumbnail").value,
         code: document.getElementById("code").value,
         stock: document.getElementById("stock").value,
         category: document.getElementById("category").value,
-        status: document.getElementById("status").value === "true" // Convert status to boolean
+        status: document.getElementById("status").value === "true"
     };
 
     socket.emit("addProduct", productAdded);
