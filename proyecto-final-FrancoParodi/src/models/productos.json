@@ -1,146 +1,171 @@
 [
   {
-    "id": 3,
-    "title": "NVIDIA GeForce RTX 3080",
-    "description": "Tarjeta gráfica NVIDIA GeForce RTX 3080, 10 GB GDDR6X",
+    "id": "1f0b1443-546b-4ea3-aa49-05d1c64f40fd",
+    "title": "Tarjeta gráfica GTX 3080",
+    "description": "Potente tarjeta gráfica para juegos de última generación.",
     "price": 799.99,
-    "thumbnail": "https://wallnet.com.ar/wp-content/uploads/2022/05/VGA-MSI-GeForce-RTX-3080-Ti-SUPRIM-X-12G0.jpg",
-    "code": "GPU001",
-    "stock": 8
+    "code": "TG3080",
+    "stock": 50,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_1"
   },
   {
-    "id": 5,
-    "title": "ASUS ROG Strix Z590-E Gaming",
-    "description": "Placa base ASUS ROG Strix Z590-E Gaming, chipset Z590",
-    "price": 299.99,
-    "thumbnail": "https://example.com/images/z590-e-gaming.jpg",
-    "code": "MOTHERBOARD001",
-    "stock": 20
+    "id": "6a1a6eef-1892-4b21-85ac-0a6c7464b37b",
+    "title": "Nuevo título",
+    "description": "Nueva descripción",
+    "price": 19.99,
+    "code": "NUEVO_CODE",
+    "stock": 50,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_7",
+    "thumbnail": "nuevasdasdasdaaaa_imagen.jpg"
   },
   {
-    "id": 6,
-    "title": "Gigabyte B550 AORUS Elite",
-    "description": "Placa base Gigabyte B550 AORUS Elite, chipset B550",
-    "price": 159.99,
-    "thumbnail": "https://example.com/images/b550-aorus-elite.jpg",
-    "code": "MOTHERBOARD002",
-    "stock": 18
-  },
-  {
-    "id": 8,
-    "title": "NVIDIA GeForce RTX 3070",
-    "description": "Tarjeta gráfica NVIDIA GeForce RTX 3070, 8 GB GDDR6",
-    "price": 499.99,
-    "thumbnail": "https://example.com/images/rtx-3070.jpg",
-    "code": "GPU003",
-    "stock": 10
-  },
-  {
-    "id": 9,
-    "title": "MSI MAG B550 TOMAHAWK",
-    "description": "Placa base MSI MAG B550 TOMAHAWK, chipset B550",
-    "price": 189.99,
-    "thumbnail": "https://example.com/images/b550-tomahawk.jpg",
-    "code": "MOTHERBOARD003",
-    "stock": 15
-  },
-  {
-    "id": 10,
-    "title": "AMD Ryzen 5 5600X",
-    "description": "Procesador AMD Ryzen 5 de 6 núcleos, 12 hilos",
-    "price": 249.99,
-    "thumbnail": "https://example.com/images/ryzen-5600x.jpg",
-    "code": "CPU004",
-    "stock": 22
-  },
-  {
-    "id": 11,
-    "title": "ASUS TUF Gaming X570-Plus",
-    "description": "Placa base ASUS TUF Gaming X570-Plus, chipset X570",
-    "price": 179.99,
-    "thumbnail": "https://example.com/images/x570-plus.jpg",
-    "code": "MOTHERBOARD004",
-    "stock": 17
-  },
-  {
-    "id": 12,
-    "title": "NVIDIA GeForce GTX 1660 Super",
-    "description": "Tarjeta gráfica NVIDIA GeForce GTX 1660 Super, 6 GB GDDR5",
-    "price": 279.99,
-    "thumbnail": "https://example.com/images/gtx-1660-super.jpg",
-    "code": "GPU004",
-    "stock": 16
-  },
-  {
-    "id": 13,
-    "title": "MSI MPG B550 GAMING EDGE WIFI",
-    "description": "Placa base MSI MPG B550 GAMING EDGE WIFI, chipset B550",
-    "price": 209.99,
-    "thumbnail": "https://example.com/images/b550-gaming-edge-wifi.jpg",
-    "code": "MOTHERBOARD005",
-    "stock": 14
-  },
-  {
-    "id": 14,
-    "title": "AMD Ryzen 7 5800X",
-    "description": "Procesador AMD Ryzen 7 de 8 núcleos, 16 hilos",
-    "price": 449.99,
-    "thumbnail": "https://example.com/images/ryzen-5800x.jpg",
-    "code": "CPU005",
-    "stock": 19
-  },
-  {
-    "id": 15,
-    "title": "NVIDIA Quadro RTX 4000",
-    "description": "Tarjeta gráfica profesional NVIDIA Quadro RTX 4000, 8 GB GDDR6",
+    "id": "8826f9e4-d5a8-45ce-86cb-9b050f99c551",
+    "title": "Monitor gaming Acer Predator X34",
+    "description": "Monitor ultrawide con tasa de refresco de 144Hz para una experiencia inmersiva.",
     "price": 899.99,
-    "thumbnail": "https://example.com/images/quadro-rtx-4000.jpg",
-    "code": "GPU005",
-    "stock": 8
+    "code": "MONACERX34",
+    "stock": 10,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_9"
   },
   {
-    "id": 16,
-    "title": "ASUS ROG Crosshair VIII Hero",
-    "description": "Placa base ASUS ROG Crosshair VIII Hero, chipset X570",
-    "price": 349.99,
-    "thumbnail": "https://example.com/images/crosshair-viii-hero.jpg",
-    "code": "MOTHERBOARD006",
-    "stock": 12
+    "id": "77cf178d-7b3e-4e50-ae8e-3b26870ebf3d",
+    "title": "Teclado mecánico Corsair K95 RGB Platinum XT",
+    "description": "Teclado mecánico de alta calidad con retroiluminación RGB personalizable.",
+    "price": 179.99,
+    "code": "TCORK95XT",
+    "stock": 25,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_11"
   },
   {
-    "id": 17,
-    "title": "Intel Core i5-11600K",
-    "description": "Procesador Intel Core i5 de 11ª generación, 6 núcleos, 12 hilos",
-    "price": 279.99,
-    "thumbnail": "https://example.com/images/i5-11600k.jpg",
-    "code": "CPU006",
-    "stock": 20
+    "id": "2cbb4a9a-d094-4be0-9d16-2d36b75f6778",
+    "title": "Ratón inalámbrico Logitech G Pro X Superlight",
+    "description": "Ratón gaming ultraligero con tecnología inalámbrica avanzada.",
+    "price": 149.99,
+    "code": "RLOGGPROX",
+    "stock": 18,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_13"
   },
   {
-    "id": 18,
-    "title": "Gigabyte GeForce GTX 1650 Super",
-    "description": "Tarjeta gráfica Gigabyte GeForce GTX 1650 Super, 4 GB GDDR5",
-    "price": 189.99,
-    "thumbnail": "https://example.com/images/gtx-1650-super.jpg",
-    "code": "GPU006",
-    "stock": 15
-  },
-  {
-    "id": 19,
-    "title": "ASRock B450M PRO4",
-    "description": "Placa base ASRock B450M PRO4, chipset B450",
+    "id": "e13f5311-3bd8-4f6c-9d65-eb97ff2f5f58",
+    "title": "Auriculares gaming HyperX Cloud II",
+    "description": "Auriculares con sonido envolvente y micrófono desmontable.",
     "price": 99.99,
-    "thumbnail": "https://example.com/images/b450m-pro4.jpg",
-    "code": "MOTHERBOARD007",
-    "stock": 25
+    "code": "HGKINGSTCLOUDII",
+    "stock": 22,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_15"
   },
   {
-    "id": 20,
-    "title": "AMD Ryzen 3 3300X",
-    "description": "Procesador AMD Ryzen 3 de 4 núcleos, 8 hilos",
-    "price": 129.99,
-    "thumbnail": "https://example.com/images/ryzen-3300x.jpg",
-    "code": "CPU007",
-    "stock": 30
+    "id": "0c41aa75-ba2e-4a15-a4d3-d90e5f0eaa42",
+    "title": "Cámara web Logitech C920 HD Pro",
+    "description": "Cámara web de alta definición para transmisiones y videoconferencias.",
+    "price": 79.99,
+    "code": "CWLOGC920",
+    "stock": 15,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_17"
+  },
+  {
+    "id": "7b49f18d-038b-4ed0-9b13-61c1d3a73ec5",
+    "title": "Fuente de poder EVGA SuperNOVA 850 G5",
+    "description": "Fuente de poder modular de alta eficiencia para sistemas de alto rendimiento.",
+    "price": 149.99,
+    "code": "FPEVGASUP850",
+    "stock": 12,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_19"
+  },
+  {
+    "id": "1499b641-47b3-462d-9d9d-c04fe6ab2158",
+    "title": "Impresora láser HP LaserJet Pro M404dn",
+    "description": "Impresora láser monocromática rápida y eficiente para entornos de oficina.",
+    "price": 229.99,
+    "code": "ILHPM404DN",
+    "stock": 15,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_23"
+  },
+  {
+    "id": "53c93745-015f-4af4-970c-e90704a562ef",
+    "title": "Impresora láser HP LaserJet Pro M404dn",
+    "description": "Impresora láser monocromática rápida y eficiente para entornos de oficina.",
+    "price": 229.99,
+    "code": "ILHPM404DN",
+    "stock": 15,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_23"
+  },
+  {
+    "id": "900eb975-3827-4eb3-89de-676a5f13a69d",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "03019143-51e7-421f-97c8-7b655f8a2915",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": "url_imagen_21"
+  },
+  {
+    "id": "e8785d86-8be3-4617-9312-eaf2ee68158f",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "93a6ad8e-f628-4ce7-8d6b-2e6ff56a5719",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "e23b4edc-da08-4cb7-a15f-a9456261439c",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "8192a5fd-6974-444d-8845-6b2e5f037648",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
   }
 ]

@@ -13,7 +13,9 @@
                     <div class="card">
                         <p> {{this.title}} </p>
                         <p>  {{this.price}} </p>
-                        <img src={{this.thumbnail}} alt={{this.title}} class="product-img">
+                        <div class="img-container">
+                            <img src={{this.thumbnail}} alt={{this.title}} class="product-img">
+                        </div>
                     </div>
                 {{/each}}
         </div>

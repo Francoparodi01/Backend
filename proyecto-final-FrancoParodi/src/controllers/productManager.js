@@ -9,15 +9,15 @@ class ProductManager {
     }
     
         addProduct(productData) {
-            // Validar campos obligatorios
-            if (!productData.title || !productData.description || !productData.price || !productData.code || !productData.stock || !productData.category) {
+            // Validamos campos obligatorios
+            if (!productData.id || !productData.title || !productData.description || !productData.price || !productData.code || !productData.stock || !productData.category || !productData.thumbnails) {
                 return ;
             }
     
-            // Genera un nuevo ID único
+            // Generamos un nuevo ID único
             const newId = uuidv4();
     
-            // Crea un nuevo producto con los datos proporcionados y valores predeterminados
+            // Creamos un nuevo producto con los datos proporcionados y valores predeterminados
             const newProduct = {
                 id: newId,
                 title: productData.title,
@@ -30,7 +30,7 @@ class ProductManager {
                 thumbnails: productData.thumbnails || []
             };
              
-            // Agrega el nuevo producto al array de productos
+            // Agregamos el nuevo producto al array de productos
             this.products.push(newProduct);
             return newProduct;
         }

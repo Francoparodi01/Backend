@@ -3,6 +3,7 @@ const router = express.Router();
 const ProductManager = require('../controllers/productManager');
 const productManager = new ProductManager("./src/models/productos.json");
 
+//Agregamos la ruta / que muestre los productos .getProducts()
 router.get('/', async (req, res) => {
     try {
         const allProducts = await productManager.getProducts();
@@ -13,6 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+//Renderizamos la ruta realTimeProducts
 router.get('/realTimeProducts', async (req,res) => {
     try {
         res.render("realTimeProducts");

@@ -21,14 +21,14 @@ class CartManager{
     }
 
     getCartById(id) {
-        const cart = this.carts.find(cart => cart.id == id);
+        const cart = this.carts.find(cart => cart.id === id);
         if (cart) {
             return cart;
         } else {
-            console.log(`El carrito con el ID número ${id}. No fue encontrado.`);
+            throw { error: "Carrito no encontrado", cartId: id };
         }
     }
-
+    
     
     //Función que trae los productos por id del carrito
     getCartProducts = async (id) => {
@@ -48,55 +48,61 @@ class CartManager{
     }
 
     //Función que crea un nuevo carrito 
-    newCart = async () => {
-        //Utilizamos la dependencia instalada para generar ids automáticos
-        const id = uuidv4();
-        //Creamos un carrito como objeto con dos propiedades
-        const newCart = { id, products: [] };
-        //getCarts nos trae todos los carritos existentes. Usamos this.carts para actualizar la lista en el array vacío.
-        //Con el método push, empujamos el nuevo carrito a la lista completa.
-        this.carts = await this.getCarts();
-        this.carts.push(newCart);
-
-        await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2));
-        return newCart;
+    async newCart() {
+        try {
+            const id = uuidv4();
+            const newCart = { id, products: [] };
+    
+            this.carts = await this.getCarts();
+            this.carts.push(newCart);
+    
+            await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2));
+            return newCart;
+        } catch (error) {
+            console.error(`Error al crear un nuevo carrito: ${error.message}`);
+            throw new Error(`Error al crear un nuevo carrito: ${error.message}`);
+        }
     }
-
-
-    addProductToCart = async (cartId, productId) => {
-            //Obtenemos todos los carritos
-            const carts = await this.getCarts();
     
-            //Mediante la funcion findIndex, buscamos el indice del id pasado por params
-            const index = carts.findIndex(cart => cart.id === cartId);
+
+    addProductToCart = async (cartId, productId, quantity, title) => {
+        try {
+            // Obtenemos todos los carritos
+            this.carts = await this.getCarts();
     
-            //Si encontramos el carrito
+            // Mediante la función findIndex, buscamos el índice del id pasado por params
+            const index = this.carts.findIndex(cart => cart.id === cartId);
+    
+            // Si se encuentra el carrito
             if (index !== -1) {
-                //Obtenemos la lista de productos del carrito
-                const cartProducts = carts[index].products
+                // Obtiene la lista de productos del carrito
+                const cartProducts = this.carts[index].products;
     
-                //Buscamos el índice del producto en el carrito si existe
+                // Busca el índice del producto en el carrito si existe
                 const existingProductIndex = cartProducts.findIndex(product => product.title === productId);
     
-                //Si existe
+                // Si el producto ya existe, incrementa la cantidad
                 if (existingProductIndex !== -1) {
-                    //Incrementamos a 1 la cantidad de ese producto
-                    cartProducts[existingProductIndex].quantity = (cartProducts[existingProductIndex].quantity || 0) + 1;
+                    cartProducts[existingProductIndex].quantity = (cartProducts[existingProductIndex].quantity || 0) + quantity;
                 } else {
-                    //Si no existe lo agregamos con la cantidad = 1
-                    cartProducts.push({ title: productId, quantity: 1 });
+                    // Si el producto no existe, agrégalo al carrito con la cantidad especificada
+                    cartProducts.push({ id: productId, quantity: quantity });
                 }
     
-                //Actualizamos la lista de productos
-                carts[index].products = cartProducts;
+                // Actualiza la lista de productos en el carrito
+                this.carts[index].products = cartProducts;
     
-                //Escribimos los cambios en el json
-                await fs.promises.writeFile(this.path, JSON.stringify(carts));
+                // Escribe los cambios en el archivo JSON
+                await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2), 'utf-8');
             } else {
-                //Error si no hay carrito
+                // Error si no se encuentra el carrito
                 throw new Error('Carrito no encontrado');
             }
+        } catch (error) {
+            console.error(`Error al agregar producto al carrito: ${error.message}`);
+            throw error;
+        }
     }
-}
+}    
 
 module.exports = CartManager
