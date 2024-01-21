@@ -1,19 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas con el mismo ancho */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+    grid-template-areas:
+        "area1 area2 area3"; /* Definición de las áreas */
+}
+
 .card {
     border: 1px solid #ccc;
     border-radius: 2px;
     margin: 10px;
     padding: 10px;
     min-width: 200px;
+    display: flex; /* Ajusta según tu diseño */
+    flex-direction: column; /* Ajusta según tu diseño */
 }
-.product-img{
+
+.product-img {
     width: 250px;
     height: 250px;
+    object-fit: cover; /* Ajusta según tu diseño */
 }
-.contenedorCards{
-    display: flex;
-    flex-direction: row;
+
+
+h1 {
+    text-align: center;
 }
-.img-container{
-    display: flex;
-    
-} 
+
+.contenedorProductos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form input,
+form select,
+form button {
+    margin-bottom: 10px;
+}

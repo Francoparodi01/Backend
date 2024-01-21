@@ -11,24 +11,23 @@ const renderProducts = (products) => {
     products.forEach(product => {
         const card = document.createElement("div");
         card.classList.add("card");
-        //Agregamos boton para eliminar: 
+
+        // Modified HTML creation to include the image
         card.innerHTML = `
-                <p>Id ${product.id} </p>
-                <p>Titulo ${product.title} </p>
-                <p>Precio ${product.price} </p>
-                <button> Eliminar Producto </button>
+            <p>Id ${product.id} </p>
+            <p>Titulo ${product.title} </p>
+            <p>Precio ${product.price} </p>
+            <img src="${product.thumbnails}" alt="${product.title}">
+            <button> Eliminar Producto </button>
         `;
+
         productsContainer.appendChild(card);
 
-        //Agregamos el evento eliminar producto:
+        // Agregamos el evento eliminar producto:
         card.querySelector("button").addEventListener("click", () => {
             deleteProduct(product.id);
         });
     });
-}
-
-const deleteProduct = (id) => {
-    socket.emit("deleteProduct", id);
 }
 
 //Agregar producto:
