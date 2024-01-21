@@ -167,5 +167,60 @@
     "status": true,
     "category": "Hardware",
     "thumbnails": []
+  },
+  {
+    "id": "2cd7e83d-77f7-456b-b8f8-6e9f5ad946bf",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "9bf33f84-f0c4-4fda-832e-0b2b8da07313",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "df8b8429-7c43-49ad-912b-42a8cbe8b5c1",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "17c9bcd0-5e09-496e-ad03-caefdf708e4c",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "34cf67b6-c056-4b4f-ad1f-e4f5f5a23c4d",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "HDDSEA4TB",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
   }
 ]

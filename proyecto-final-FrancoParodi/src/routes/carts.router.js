@@ -13,13 +13,14 @@ const productManager = new ProductManager("./src/models/productos.json");
 // http://localhost:8080/api/carts/
 
 // Obtenemos todos los carritos
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
+    const cart = await cartManager.newCart();
+
     try {
-        const response = await cartManager.newCart();
-        res.json(response);
+        res.json(cart);
     } catch (error) {
-        console.log("Error, no se pudo crear carrito", error);
-        res.status(500).json({ error: "Error al intentar crear el carrito" });
+        res.send('Error: No se pudo crear el carrito');
+
     }
 });
 
