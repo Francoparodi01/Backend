@@ -2,7 +2,16 @@ const socket = io();
 
 socket.on("productos", (products) => {
     renderProducts(products);
-}); 
+});
+
+document.getElementById("contenedorProductos").addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (target.classList.contains("delete-button")) {
+        const productId = target.getAttribute("data-id");
+        eliminarProducto(productId);
+    }
+});
 
 const renderProducts = (products) => {
     const productsContainer = document.getElementById("contenedorProductos");
@@ -12,7 +21,6 @@ const renderProducts = (products) => {
         const card = document.createElement("div");
         card.classList.add("card");
 
-        // Modified HTML creation to include the image
         card.innerHTML = `
             <p>Id ${product.id} </p>
             <p>Titulo ${product.title} </p>
@@ -22,21 +30,13 @@ const renderProducts = (products) => {
         `;
 
         productsContainer.appendChild(card);
-
-        card.querySelector("button").addEventListener("click", () => {
-            eliminarProducto(product.id);
-        });
     });
-
-
-//Eliminar producto: 
-
-const eliminarProducto = (id) => {
-    socket.emit("eliminarProducto", id);
 }
 
+const eliminarProducto = (id) => {
+    socket.emit("deleteProduct", id);
+}
 
-//Agregar producto:
 document.getElementById("send-button").addEventListener("click", () => {
     addProduct();
 });
@@ -55,5 +55,4 @@ const addProduct = () => {
 
     socket.emit("addProduct", productAdded);
     console.log(productAdded);
-    };
-}
+};
