@@ -4,7 +4,7 @@ socket.on("productos", (products) => {
     renderProducts(products);
 });
 
-document.getElementById("contenedorProductos").addEventListener("click", (event) => {
+document.getElementById("products-container").addEventListener("click", (event) => {
     const target = event.target;
 
     if (target.classList.contains("delete-button")) {
@@ -14,7 +14,7 @@ document.getElementById("contenedorProductos").addEventListener("click", (event)
 });
 
 const renderProducts = (products) => {
-    const productsContainer = document.getElementById("contenedorProductos");
+    const productsContainer = document.getElementById("products-container");
     productsContainer.innerHTML = "";
 
     products.forEach(product => {
@@ -22,10 +22,9 @@ const renderProducts = (products) => {
         card.classList.add("card");
 
         card.innerHTML = `
-            <p>Id ${product.id} </p>
             <p>Titulo ${product.title} </p>
-            <p>Precio ${product.price} </p>
             <img src="${product.thumbnails}" alt="${product.title}" class="product-img">
+            <p>Precio ${product.price} </p>
             <button class="delete-button" data-id="${product.id}">Eliminar Producto</button>
         `;
 
