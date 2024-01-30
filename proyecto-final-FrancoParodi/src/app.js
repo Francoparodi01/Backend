@@ -8,7 +8,7 @@ const productsRouter = require("./routes/products.router.js");
 const cartsRouter = require("./routes/carts.router.js");
 
 const ProductManager = require("./controllers/productManager.js");
-const productManager = new ProductManager("./src/models/productos.json");
+const productManager = new ProductManager("./src/models/products.json");
 
 const app = express();
 const port = 8080;

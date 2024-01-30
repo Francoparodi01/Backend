@@ -21,7 +21,15 @@
     "products": [
       {
         "id": "6a1a6eef-1892-4b21-85ac-0a6c7464b37b",
-        "quantity": 66
+        "quantity": 492492922
+      },
+      {
+        "id": "asdasdasdads",
+        "quantity": 8
+      },
+      {
+        "id": "fa68385f-10b3-4acf-b016-215ba762390a",
+        "quantity": 7
       }
     ]
   },
@@ -30,7 +38,7 @@
     "products": [
       {
         "id": "6a1a6eef-1892-4b21-85ac-0a6c7464b37b",
-        "quantity": 369369661
+        "quantity": 861862513
       }
     ]
   },

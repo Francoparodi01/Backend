@@ -11,11 +11,11 @@
   },
   {
     "id": "8826f9e4-d5a8-45ce-86cb-9b050f99c551",
-    "title": "Tarjeta gráfica RTX 3090",
-    "description": "GPU de alta gama para rendimiento extremo en juegos y aplicaciones profesionales.",
-    "price": 1299.99,
+    "title": "Nuevo título",
+    "description": "Nueva descripción",
+    "price": 19.99,
     "code": "RTX3090",
-    "stock": 20,
+    "stock": 50,
     "category": "GPU",
     "thumbnails": "https://http2.mlstatic.com/D_NQ_NP_627361-MLA41277723075_032020-O.png"
   },
@@ -98,5 +98,38 @@
     "stock": 20,
     "category": "GPU",
     "thumbnails": "https://m.media-amazon.com/images/I/71xcqtEPHVL._AC_SL1500_.jpg"
+  },
+  {
+    "id": "46deb28b-3b8e-47f7-be4e-dfced1bd522e",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "RTX3090",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "fa68385f-10b3-4acf-b016-215ba762390a",
+    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
+    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
+    "price": 119.99,
+    "code": "RTX3090",
+    "stock": 20,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
+  },
+  {
+    "id": "e54b0170-772e-45a0-8987-92ed398c0cd8",
+    "title": "Nasfdasfas",
+    "description": "asdasdadsasdasdasd",
+    "price": 19.99,
+    "code": "RTX3090",
+    "stock": 50,
+    "status": true,
+    "category": "Hardware",
+    "thumbnails": []
   }
 ]

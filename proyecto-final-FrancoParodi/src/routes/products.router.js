@@ -3,10 +3,10 @@ const router = express.Router();
 const fs = require('fs/promises')
 
 const ProductManager = require('../controllers/productManager.js');
-const productManager = new ProductManager("./src/models/productos.json");
+const productManager = new ProductManager("./src/models/products.json");
 
 const CartManager = require("../controllers/cartManager.js");
-const cartManager = new CartManager("./src/models/carrito.json");
+const cartManager = new CartManager("./src/models/cart.json");
 
 router.get('/', async (req, res) => {
     try {
@@ -46,6 +46,11 @@ router.post('/', async (req, res) => {
         // Obtener los datos del nuevo producto desde el cuerpo de la solicitud
         const productData = req.body;
 
+        // Verificar si ya existe un producto con el mismo código
+        if (productManager.productExists(productData.code)) {
+            return res.json({ error: 'Ya existe un producto con este código' });
+        }
+
         // Agregar el nuevo producto utilizando el método addProduct de tu ProductManager
         const newProduct = productManager.addProduct(productData);
 
@@ -74,44 +79,30 @@ router.post('/', async (req, res) => {
     }
 });
 
+
 router.put('/editProduct/:pid', async (req, res) => {
     try {
         const productId = req.params.pid;
-        const { title, description, price, thumbnail, code, stock } = req.body;
+        const { title, description, price, stock } = req.body;
 
-        const filePath = productManager.path;
-
-        const currentContent = await fs.readFile(filePath, 'utf-8');
-        const products = JSON.parse(currentContent);
-
-        // Validamos si el producto con el ID proporcionado existe
-        const productIndex = products.findIndex(product => product.id === productId);
-
-        if (productIndex === -1) {
-            return res.json({ error: 'Producto no encontrado', productId });
-        }
-
-        products[productIndex] = {
-            ...products[productIndex],
+        // Actualiza el producto utilizando el método updateProduct de tu ProductManager
+        const updatedProduct = productManager.updateProduct(productId, {
             title,
             description,
             price,
-            thumbnail,
-            code,
             stock
-        };
+        });
 
-        const updatedContent = JSON.stringify(products, null, 2);
+        if (!updatedProduct) {
+            return res.json({ error: 'Producto no encontrado', productId });
+        }
 
-        await fs.writeFile(filePath, updatedContent, 'utf-8');
-
-        res.json({ message: 'Producto actualizado con éxito', updatedProduct: products[productIndex] });
+        res.json({ message: 'Producto actualizado con éxito', updatedProduct });
     } catch (error) {
         console.error('Error al editar producto:', error.message);
         res.json({ error: 'Error al editar producto' });
     }
 });
-
 
 router.delete('/:pid', async (req, res) => {
     const { pid } = req.params;

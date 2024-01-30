@@ -6,7 +6,6 @@
 }
 
 .card {
-    display: flex;
     border: 1px solid #ccc;
     border-radius: 2px;
     margin: 10px;
@@ -21,7 +20,6 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); 
     border-color: #ff0000;
 }
-
 .product-img {
     width: 100%;
     height: auto;

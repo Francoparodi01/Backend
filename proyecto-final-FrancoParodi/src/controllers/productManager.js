@@ -44,6 +44,10 @@ class ProductManager {
         }
     }
 
+    productExists(code) {
+        return this.products.some(product => product.code === code);
+    }
+
     saveProducts() {
         try {
             const data = JSON.stringify(this.products, null, 2);
@@ -66,26 +70,35 @@ class ProductManager {
             console.log(`El producto con el ID número ${id}. No fue encontrado.`);
         }
     }
-
     updateProduct(id, updatedFields) {
-        const productId = parseInt(id, 10); // Convertir ID a número
-    
+        const productId = id;
+        
         const productIndex = this.products.findIndex(product => product.id === productId);
-    
+        
         if (productIndex !== -1) {
+            // Validar campos obligatorios antes de la actualización
+            const mandatoryFields = ['id', 'title', 'description', 'price', 'code', 'stock', 'category', 'thumbnails'];
+    
+            for (const field of mandatoryFields) {
+                if (updatedFields[field] === undefined || updatedFields[field] === null) {
+                    updatedFields[field] = this.products[productIndex][field];
+                }
+            }
+    
             // Sobrescribe todos los campos con los proporcionados en updatedFields
             this.products[productIndex] = {
-                id: this.products[productIndex].id,
+                ...this.products[productIndex],
                 ...updatedFields,
             };
-    
+        
             this.saveProducts();
-            console.log(`El producto con el número de ID ${id} se actualizó`);
+            console.log(`El producto con el ID ${id} se actualizó`);
+            return this.products[productIndex]; // Devuelve el producto actualizado
         } else {
-            console.log(`El producto con el número de ID ${id} no fue encontrado`);
+            console.log(`El producto con el ID ${id} no fue encontrado`);
+            return null; // Producto no encontrado
         }
     }
-    
     
     deleteProduct(id) {
         try {
@@ -102,7 +115,7 @@ class ProductManager {
             }
         } catch (error) {
             console.error(`Error al eliminar producto: ${error.message}`);
-            throw error; // Relanza la excepción para que pueda manejarse adecuadamente fuera de la clase
+            throw error; 
         }
     }
 }
