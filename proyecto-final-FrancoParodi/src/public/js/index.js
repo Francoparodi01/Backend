@@ -9,7 +9,7 @@ document.getElementById("products-container").addEventListener("click", (event) 
 
     if (target.classList.contains("delete-button")) {
         const productId = target.getAttribute("data-id");
-        eliminarProducto(productId);
+        deleteProduct(productId);
     }
 });
 
@@ -32,7 +32,7 @@ const renderProducts = (products) => {
     });
 }
 
-const eliminarProducto = (id) => {
+const deleteProduct = (id) => {
     socket.emit("deleteProduct", id);
 }
 

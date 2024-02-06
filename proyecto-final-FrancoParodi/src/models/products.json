@@ -98,38 +98,5 @@
     "stock": 20,
     "category": "GPU",
     "thumbnails": "https://m.media-amazon.com/images/I/71xcqtEPHVL._AC_SL1500_.jpg"
-  },
-  {
-    "id": "46deb28b-3b8e-47f7-be4e-dfced1bd522e",
-    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
-    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
-    "price": 119.99,
-    "code": "RTX3090",
-    "stock": 20,
-    "status": true,
-    "category": "Hardware",
-    "thumbnails": []
-  },
-  {
-    "id": "fa68385f-10b3-4acf-b016-215ba762390a",
-    "title": "Disco Duro Externo Seagate Backup Plus 4TB",
-    "description": "Almacenamiento externo de 4TB con conectividad USB 3.0 para realizar copias de seguridad de forma rápida y sencilla.",
-    "price": 119.99,
-    "code": "RTX3090",
-    "stock": 20,
-    "status": true,
-    "category": "Hardware",
-    "thumbnails": []
-  },
-  {
-    "id": "e54b0170-772e-45a0-8987-92ed398c0cd8",
-    "title": "Nasfdasfas",
-    "description": "asdasdadsasdasdasd",
-    "price": 19.99,
-    "code": "RTX3090",
-    "stock": 50,
-    "status": true,
-    "category": "Hardware",
-    "thumbnails": []
   }
 ]
